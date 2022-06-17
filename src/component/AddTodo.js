@@ -6,6 +6,7 @@ class AddTodo extends Component {
   constructor() {
     super();
     this.state = {
+      date: "",
       content: "",
     };
   }
@@ -14,6 +15,7 @@ class AddTodo extends Component {
   // into the text field.
   handleChange = (event) => {
     this.setState({
+      date: Date().toLocaleString('en-US'),
       content: event.target.value,
     });
   };
@@ -27,6 +29,7 @@ class AddTodo extends Component {
       this.props.addTodo(this.state);
       this.setState({
         content: "",
+        date: "",
       });
     }
   };
